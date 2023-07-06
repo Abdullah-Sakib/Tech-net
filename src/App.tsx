@@ -1,14 +1,13 @@
-import { useDispatch, useSelector } from "react-redux";
-import { RootState } from "./redux/store";
 import {
   decrement,
   increment,
   incrementByAmount,
 } from "./redux/features/counter/counterSlice";
+import { useAppDispatch, useAppSelector } from "./redux/hook";
 
 function App() {
-  const { counter } = useSelector((state: RootState) => state.counter);
-  const dispatch = useDispatch();
+  const { counter } = useAppSelector((state) => state.counter);
+  const dispatch = useAppDispatch();
   return (
     <div className="text-center pt-14 flex justify-center items-center">
       <button
